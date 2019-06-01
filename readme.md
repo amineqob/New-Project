@@ -64,7 +64,7 @@ ___
 
 <!---Images--->
 
-![markdown](img/pic1.jpg)
+![markdown](img/headerimg.jpg)
 
 <!---Github Readme--->
 
