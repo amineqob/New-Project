@@ -1,0 +1,139 @@
+/*  the root element it means you target the whole html page */
+/* between the root brackets you define vars */
+/* this symbol in the first ( -- ) it means you define a var */
+/* we use root for global scope*/
+/* you can use any elements : body , header , nav , a div instead of root 
+but keep in mind those variables you define on one of those are just only working for them */
+:root {
+
+--main-bg-color: grey;
+--main-txt-color:#ffff;
+--width-container : 90%;
+--header-bg-color : black;
+--header-txt-color: white;
+
+
+
+}
+
+
+body{
+
+background-color: var(--main-bg-color);
+color: var(--main-txt-color);
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+padding: 0;
+margin: 0;
+font-family: 'Montserrat', sans-serif;
+
+}
+.container{
+
+  width: var(--width-container);
+  margin: 20px auto;
+}
+header#main-header {
+
+    background-color: var(--header-bg-color);
+    color: var(--header-txt-color);
+
+}
+
+header#main-header h1{
+margin: 0;
+padding: 10px;
+
+}
+
+/* pb numero 1 >> in css variables you cant set a var for 20 for example gap and then recall it like this :
+
+--gap:20;
+grid-gap: var(--gap);
+*/
+
+.grid {
+
+display: grid;
+grid-template-columns: 1fr 1fr;
+
+/* solution for pb numero 1*/
+--grid-gap:25;
+grid-gap: calc(var(--grid-gap) * 2px);
+
+
+}
+
+/* Define vars only works for the box and the element within */
+/* we use it in specific scope and for the childs within this scope*/
+
+.box {
+
+    --bg-main-color : blue;
+    --padding-box : 10px 20px;
+    --box-color : black;
+    --border-box : 2px solid black;
+    --box-shadow-h-offset : 10px;
+    --box-shadow-v:5px;
+    --box-shadow-blur: 5px;
+   
+
+
+
+}
+
+.box {
+
+background-color: var(--bg-main-color);
+padding: var(--padding-box);
+border: var(--border-box);
+box-shadow: 
+var(--box-shadow-h-offset)
+var(--box-shadow-v)
+var(--box-shadow-blur)
+var(--box-color);
+
+}
+
+h1{
+
+color: var(--box-color);
+
+}
+/* .box p {
+ this method called overwrite it means that 1 is taking a place the 2 
+          1 : --box-color : red;
+          2 : color: var(--box-color);
+ 
+
+}*/
+
+/*.box p{
+ this method called a fall back it means if you recall a undefine var and you wanna set a fall back for it you can use
+ it like this example of color :
+
+  color: var(--color-p-box , red);
+
+  the example of padding :
+
+
+  padding : var(--box-padding-p, 10px);
+}*/
+
+@media screen and (max-width: 760px) {
+
+:root {
+
+
+  --header-bg-color : blue;
+}
+
+
+  
+}
+
+
+
+
+
+
+
